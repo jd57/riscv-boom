@@ -248,7 +248,7 @@ class Rob(
   // TODO compress xcpt cause size. Most bits in the middle are zero.
   val r_xcpt_val       = RegInit(false.B)
   val r_xcpt_uop       = Reg(new MicroOp())
-  val r_xcpt_badvaddr  = Reg(UInt(xLen.W))
+  val r_xcpt_badvaddr  = Reg(UInt(coreMaxAddrBits.W))
 
   //--------------------------------------------------
   // Utility
@@ -797,7 +797,7 @@ class Rob(
   io.rob_tail_idx := rob_tail_idx
   io.rob_pnr_idx  := rob_pnr_idx
   io.empty        := empty
-  io.ready        := (rob_state === s_normal) && !full
+  io.ready        := (rob_state === s_normal) && !full && !r_xcpt_val
 
   //-----------------------------------------------
   //-----------------------------------------------
