@@ -1,4 +1,4 @@
-Welcome to RISCV-BOOM's documentation!
+Welcome to RISCV-BOOM's documentation! (try to translate to Chinese)
 ======================================
 
 The Berkeley Out-of-Order Machine (BOOM) is a synthesizable and parameterizable open-source `RISC-V <riscv.org>`__ out-of-order core written in the `Chisel <chisel-lang.org>`__ hardware construction language.
