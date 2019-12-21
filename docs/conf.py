@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'RISCV-BOOM'
+project = 'RISCV-BOOM(only-doc-zh)'
 copyright = '2019, The Regents of the University of California'
 author = 'Chris Celio, Jerry Zhao, Abraham Gonzalez, Ben Korpan'
 
@@ -106,7 +106,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RISCV-BOOMdoc'
+htmlhelp_basename = 'RISCV-BOOMdoczh'
 
 
 # -- Options for LaTeX output ------------------------------------------------
