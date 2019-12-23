@@ -10,13 +10,13 @@ The BOOM Pipeline
 Overview
 --------
 
-概念上来说, BOOM划分为10个Stages: **Fetch**, **Decode**,
+从概念上讲，BOOM分为10个阶段: **Fetch**, **Decode**,
 **Register Rename**, **Dispatch**, **Issue**, **Register Read**, **Execute**, **Memory**,
-**Writeback** 和 **Commit**. 实际上很多stages在实现中进行合并，
-因此 **7** 个stages: **Fetch**, **Decode/Rename**, 
+**Writeback** 和 **Commit** 。但是，在当前的实现中，这些阶段中的许多阶段已合并在一起，产生了七个阶段:
+ **Fetch**, **Decode/Rename**, 
 **Rename/Dispatch**, **Issue/RegisterRead**, **Execute**,
-**Memory** 和 **Writeback** (**Commit** 异步发生，因此不将其计算为“pipeline”的一部分)。
-:numref:`boom-pipeline` 显示了一个简化的BOOM pipeline，其中列出了所有pipeline阶段。
+**Memory** 和 **Writeback** (**Commit** 异步发生，因此它不算作“管道”的一部分)。
+:numref:`boom-pipeline` 显示了简化的BOOM管道，其中列出了所有管道阶段。
 
 Stages
 ------
@@ -24,20 +24,22 @@ Stages
 Fetch
 ^^^^^
 
-指令从指令内存中 *fetched* 并推入FIFO队列，称为:term:`Fetch Buffer` 。
-分支预测也发生在这个阶段，根据需要重定向fectch的指令。[1]_
+从指令存储器中 **Fetch** 指令，并将其推入称为:term: `Fetch Buffer` 的FIFO队列中。
+分支预测也发生在此阶段，根据需要重定向提取的指令。[1]_
 
 Decode
 ^^^^^^
 
-**Decode** 从：term:`Fetch Buffer` 中提取指令，并生成相应的 
-:term:`Micro-Op(s) (UOPs)<Micro-Op (UOP)>` 放入pipeline中. [2]_
+**Decode** 
+将指令从:term:`Fetch Buffer` 中拉出，并生成适当的
+:term:`Micro-Op(s) (UOPs)<Micro-Op (UOP)>` 
+以放入流水线中。[2]_
+
 
 Rename
 ^^^^^^
 
-The ISA, or "logical", register specifiers (e.g. x0-x31) are
-then *renamed* into "physical" register specifiers.
+然后将ISA或“逻辑”寄存器说明符（例如x0-x31） **Rename** 为“物理”寄存器说明符。
 
 Dispatch
 ^^^^^^^^
