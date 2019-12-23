@@ -10,13 +10,13 @@ The BOOM Pipeline
 Overview
 --------
 
-Conceptually, BOOM is broken up into 10 stages: **Fetch**, **Decode**,
+概念上来说, BOOM划分为10个Stages: **Fetch**, **Decode**,
 **Register Rename**, **Dispatch**, **Issue**, **Register Read**, **Execute**, **Memory**,
-**Writeback** and **Commit**. However, many of those stages are
-combined in the current implementation, yielding **seven** stages:
-**Fetch**, **Decode/Rename**, **Rename/Dispatch**, **Issue/RegisterRead**, **Execute**,
-**Memory** and **Writeback** (**Commit** occurs asynchronously, so it is not counted as part of the “pipeline").
-:numref:`boom-pipeline` shows a simplified BOOM pipeline that has all of the pipeline stages listed.
+**Writeback** 和 **Commit**. 实际上很多stages在实现中进行合并，
+因此 **7** 个stages: **Fetch**, **Decode/Rename**, 
+**Rename/Dispatch**, **Issue/RegisterRead**, **Execute**,
+**Memory** 和 **Writeback** (**Commit** 异步发生，因此不将其计算为“pipeline”的一部分)。
+:numref:`boom-pipeline` 显示了一个简化的BOOM pipeline，其中列出了所有pipeline阶段。
 
 Stages
 ------
@@ -24,17 +24,14 @@ Stages
 Fetch
 ^^^^^
 
-Instructions are *fetched* from instruction memory and
-pushed into a FIFO queue, known as the :term:`Fetch Buffer` . Branch
-prediction also occurs in this stage, redirecting the fetched
-instructions as necessary. [1]_
+指令从指令内存中 *fetched* 并推入FIFO队列，称为:term:`Fetch Buffer` 。
+分支预测也发生在这个阶段，根据需要重定向fectch的指令。[1]_
 
 Decode
 ^^^^^^
 
-**Decode** pulls instructions out of the :term:`Fetch Buffer` and
-generates the appropriate :term:`Micro-Op(s) (UOPs)<Micro-Op (UOP)>` to place into the
-pipeline. [2]_
+**Decode** 从：term:`Fetch Buffer` 中提取指令，并生成相应的 
+:term:`Micro-Op(s) (UOPs)<Micro-Op (UOP)>` 放入pipeline中. [2]_
 
 Rename
 ^^^^^^

@@ -1,27 +1,27 @@
 Welcome to RISCV-BOOM's documentation! (try to translate to Chinese)
 ======================================
 
-The Berkeley Out-of-Order Machine (BOOM) is a synthesizable and parameterizable open-source `RISC-V <riscv.org>`__ out-of-order core written in the `Chisel <chisel-lang.org>`__ hardware construction language.
-The goal of this document is to describe the design and implementation of the core as well as provide other helpful information to use the core.
+Berkeley Out-of-Order Machine (BOOM) 是`RISC-V <riscv.org>`__的一个可综合，参数化的开源版本，由`Chisel <chisel-lang.org>`__硬件约束语言写成。
+这个文档描述了核心的设计和实现，并提供使用该核心的其他帮助。
 
-Useful Links
+相关连接
 ------------
 
-The BOOM source code can be found here: https://github.com/riscv-boom/riscv-boom.
+BOOM源代码:https://github.com/riscv-boom/riscv-boom.
 
 The main supported mechanism to use the core is to use the Chipyard framework: https://github.com/ucb-bar/chipyard.
 
-The BOOM website can be found here: https://boom-core.org.
+BOOM网站: https://boom-core.org.
 
-The BOOM mailing list can be found here: https://groups.google.com/forum/#!forum/riscv-boom.
+BOOM邮件list: https://groups.google.com/forum/#!forum/riscv-boom.
 
-Quick-start
+快速开始
 -----------
 
-The best way to get started with the BOOM core is to use the `Chipyard project template <https://github.com/ucb-bar/chipyard>`__.
-There you will find the main steps to setup your environment, build, and run the BOOM core on a C++ emulator.
-Chipyard also provides supported flows for pushing a BOOM-based SoC through both the FireSim FPGA simulation flow and the HAMMER ASIC flow.
-Here is a selected set of steps from `Chipyard's documentation <https://chipyard.readthedocs.io/en/latest/>`__:
+开始BOOM核最好的方式是用 `Chipyard project template <https://github.com/ucb-bar/chipyard>`__.
+你可以在那里找到主要步骤:建立环境，build，C++模拟器run BOOM核
+Chipyard也提供BOOM型SOC的推进流程，通过FireSim FPGA仿真器和HAMMER ASCI流程。
+步骤在: `Chipyard's documentation <https://chipyard.readthedocs.io/en/latest/>`__:
 
 .. _quick-start-code:
 .. code-block:: bash
